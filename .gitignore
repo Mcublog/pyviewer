@@ -1,0 +1,6 @@
+__pycache__
+env
+redis/appendonly.aof
+redis/dump.rdb
+ks2_deploy
+.vscode/ltex.hiddenFalsePositives.en-US.txt

@@ -1,0 +1,34 @@
+<!-- templates/login.html -->
+
+{% extends "base.html" %}
+
+{% block content %}
+<div class="d-flex justify-content-center">
+    <form method="POST" action="/login">
+        <h3 class="text-center">Login</h3>
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <div class="alert alert-danger" role="danger">
+            {{ messages[0] }}
+        </div>
+        {% endif %}
+        {% endwith %}
+        <div class="input-group mb-2 mr-sm-2">
+            <div class="input-group-prepend">
+                <div class="input-group-text">Email address</div>
+            </div>
+            <input type="email" name="email" class="form-control" id="inputEmail" aria-describedby="emailHelp"
+                placeholder="Email address">
+        </div>
+        <div class="input-group mb-2 mr-sm-2">
+            <div class="input-group-prepend">
+                <div class="input-group-text">Password</div>
+            </div>
+            <input type="password" class="form-control" name="password" id="inputPassword" placeholder="Password">
+        </div>
+        <div class="d-flex justify-content-center">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+    </form>
+</div>
+{% endblock %}

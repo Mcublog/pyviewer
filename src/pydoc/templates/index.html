@@ -1,0 +1,26 @@
+<!-- templates/index.html -->
+
+{% extends "base.html" %}
+
+{% block content %}
+<h1 class="title">
+  PYDOC {{ version }}
+</h1>
+<h2 class="subtitle">
+  3D model viewer and more.
+</h2>
+<div class="online_3d_viewer"
+    style="width: 800px; height: 600px;"
+    model="{{ url_for('static', filename='model/SOIC-14.STEP') }}"
+    camera="3,1,2,0,0,0,0,0,1"
+    backgroundcolor="200,200,200"
+    edgesettings="on,0,0,0,1">
+</div>
+<div class="d-flex justify-content-start">
+  <div class="list-group list-group-flush">
+    <a href="https://github.com/kovacsv/Online3DViewer"
+      class="list-group-item list-group-item-action">3dOnlineViewer</a>
+  </div>
+</div>
+
+{% endblock %}
